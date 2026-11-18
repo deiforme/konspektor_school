@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Конспектор — разборы тем от школьников</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo"><span>Конспектор</span></div>
+  <div class="user" id="user"></div>
+</header>
+
+<section class="hero">
+  <h1>Разборы тем от таких же школьников</h1>
+  <p>Находи объяснения по предметам и темам, сохраняй полезное в закладки и делись своими конспектами.</p>
+</section>
+
+<div class="bar">
+  <input type="search" id="q" placeholder="Поиск по названию и тексту" aria-label="Поиск">
+  <select id="grade" aria-label="Класс"><option value="">Все классы</option></select>
+  <select id="sort" aria-label="Сортировка"><option value="new">Сначала новые</option><option value="top">Сначала полезные</option></select>
+  <button class="main" id="add">Написать разбор</button>
+</div>
+<div class="chips" id="chips"></div>
+<div class="tabs" id="tabs">
+  <button class="tab on" data-t="all">Все материалы</button>
+  <button class="tab" data-t="marks">Закладки</button>
+  <button class="tab" data-t="mine">Мои</button>
+</div>
+<div class="grid" id="list"></div>
+</div>
+
+<dialog id="authDlg"><div class="dlg">
+  <h2 id="authTitle">Вход</h2>
+  <label>Логин<input id="aName" autocomplete="username" maxlength="20"></label>
+  <label>Пароль<input id="aPass" type="password" autocomplete="current-password"></label>
+  <div class="err" id="aErr"></div>
+  <div class="actions"><button class="main" id="aGo">Войти</button><button id="aSwitch" class="link">Нет аккаунта? Зарегистрироваться</button><button class="link" data-close>Отмена</button></div>
+</div></dialog>
+
+<dialog id="newDlg"><div class="dlg">
+  <h2>Новый разбор</h2>
+  <label>Заголовок<input id="nTitle" maxlength="90" placeholder="Например: Как решать квадратные уравнения"></label>
+  <div class="row">
+    <label>Предмет<select id="nSub"></select></label>
+    <label>Класс<select id="nGrade"></select></label>
+  </div>
+  <label>Тема<input id="nTopic" maxlength="60" placeholder="Например: Дискриминант"></label>
+  <label>Объяснение своими словами<textarea id="nText" placeholder="Пиши коротко и по шагам. Фото страниц учебников не публикуй."></textarea></label>
+  <div class="err" id="nErr"></div>
+  <div class="actions"><button class="main" id="nGo">Опубликовать</button><button class="link" data-close>Отмена</button></div>
+</div></dialog>
+
+<dialog id="viewDlg"><div class="dlg" id="view"></div></dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
